@@ -2,7 +2,7 @@ name:                say-my-name
 version:             0.1.0.0
 synopsis:            Require explicit type application for some type variables.
 description:         Require explicit type application for some type variables.
-homepage:            https://github.com/githubuser/say-my-name#readme
+homepage:            https://github.com/matt-noonan/say-my-name#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Matt Noonan
