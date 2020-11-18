@@ -7,7 +7,7 @@ be done, but not if it *should* be done!
 To force explicit type annotations on a type variable `a`, add a new type
 variable `a_` and a constraint `MustName a "a" a_`:
 
-``` haskell
+```haskell
 -- NOTE: requires AllowAmbiguousTypes to define!
 sayMyNameId :: forall a_ a. (MustName a "a" a_) => a -> a
 sayMyNameId = id
@@ -17,7 +17,7 @@ This constraint means "the user must supply a value for `a` via an
 explicit type annotation that specifies `a_`". The string `"a"` is
 used to make nice error messages:
 
-``` haskell
+```
 λ> sayMyNameId "test"
 sayMyNameId "test"
 
@@ -47,11 +47,13 @@ sayMyNameId @String "test"
 ```
 
 You can also augment the error message with a usage example:
-``` haskell
-λ> :{
- | sayMyNameId :: forall a_ a. (MustNameEx a "a" a_ "sayMyNameId @String \"hello, world!\"") => a -> a
- | sayMyNameId = id
- | :}
+```haskell
+-- NOTE: requires AllowAmbiguousTypes to define!
+sayMyNameId :: forall a_ a. (MustNameEx a "a" a_ "sayMyNameId @String \"hello, world!\"") => a -> a
+sayMyNameId = id
+```
+
+```
 λ> sayMyNameId "test"
 
 <interactive>:36:1: error:
