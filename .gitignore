@@ -1,0 +1,15 @@
+\#*\#
+.DS_Store
+**/.DS_Store
+.cabal-sandbox/
+dist
+**/*~
+cabal.sandbox.config
+cabal.project.local
+dist-newstyle
+.venv/
+.ghc.environment.*
+.stack-work
+.hdevtoolsrc
+bin
+stack.yaml.lock
